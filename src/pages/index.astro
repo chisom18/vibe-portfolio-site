@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Project One',
+    category: 'Brand Identity',
+    description: '[Add project description]',
+    image: '/images/project-one.svg',
+    href: '#',
+  },
+  {
+    title: 'Project Two',
+    category: 'Packaging',
+    description: '[Add project description]',
+    image: '/images/project-two.svg',
+    href: '#',
+  },
+  {
+    title: 'Project Three',
+    category: 'Campaign',
+    description: '[Add project description]',
+    image: '/images/project-three.svg',
+    href: '#',
+  },
+];
+---
+
+<BaseLayout
+  pageTitle="Elikwu Chisom | Brand Designer"
+  description="Independent brand designer creating thoughtful identity systems, creative direction, and brand experiences."
+>
+  <Navigation />
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero__content">
+        <p class="eyebrow">GOOD DESIGN. CLEAR THINKING.</p>
+        <h1>Independent creative building brands and exploring ideas.</h1>
+        <p class="lead">Brand design, creative thinking, and everything in between.</p>
+        <div class="actions">
+          <a class="button button--primary" href="/projects">Explore my work</a>
+          <a class="button button--secondary" href="#newsletter">Join the newsletter</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section-shell">
+      <div class="intro__meta">
+        <p class="eyebrow accent">[Add personal introduction]</p>
+      </div>
+      <div class="intro__copy">
+        <p>
+          I’m Elikwu Chisom, a designer focused on building brands that feel clear, confident, and memorable.
+        </p>
+        <p>
+          My work sits between strategy and visual expression—shaping identities, communication, and the ideas behind them.
+        </p>
+        <a class="text-link" href="/about">Read more about me</a>
+      </div>
+    </section>
+
+    <section class="projects section-shell" aria-labelledby="featured-projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="featured-projects-title">Featured projects.</h2>
+      </div>
+
+      <div class="project-grid project-grid--featured">
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </section>
+
+    <section id="newsletter" class="newsletter section-shell">
+      <div class="newsletter__inner">
+        <p class="eyebrow accent">IDEAS WORTH KEEPING.</p>
+        <h2>One email every week. Thoughts on design, branding, creativity, business, and things I’m learning.</h2>
+        <NewsletterForm />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

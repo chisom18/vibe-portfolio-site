@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout pageTitle="404 | Elikwu Chisom" description="Page not found.">
+  <Navigation />
+
+  <main class="section-shell error-page">
+    <p class="eyebrow accent">404</p>
+    <h1>Page not found.</h1>
+    <p>The page you are looking for has moved or doesn’t exist yet.</p>
+    <a class="button button--primary" href="/">Back to home</a>
+  </main>
+
+  <Footer />
+</BaseLayout>

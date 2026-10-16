@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<BaseLayout
+  pageTitle="About | Elikwu Chisom"
+  description="About Elikwu Chisom — placeholder story and design philosophy."
+>
+  <Navigation />
+
+  <main>
+    <section class="page-hero section-shell">
+      <p class="eyebrow accent">Elikwu Chisom</p>
+      <h1>Designing with clarity, intent, and personality.</h1>
+    </section>
+
+    <section class="about-story section-shell">
+      <div class="about-story__intro">
+        <p class="eyebrow">My story</p>
+      </div>
+      <div class="about-story__content">
+        <p>[Add a short introduction about who I am and what I care about.]</p>
+        <p>[Add background, personal journey, and creative influences.]</p>
+        <p>[Add context about my experience and the ideas that shape my work.]</p>
+      </div>
+    </section>
+
+    <section class="about-approach section-shell">
+      <div class="section-heading section-heading--split">
+        <p class="eyebrow">My approach</p>
+        <h2>Design that feels considered, useful, and alive.</h2>
+      </div>
+      <div class="approach-grid">
+        <p>[Add design philosophy.]</p>
+        <p>[Add process notes, how I work, and what makes branding effective.]</p>
+      </div>
+    </section>
+
+    <section class="services section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">What I do</p>
+        <h2>Creative services and interests.</h2>
+      </div>
+      <ul class="service-list">
+        <li>Brand identity design</li>
+        <li>Visual systems</li>
+        <li>Creative direction</li>
+        <li>Brand strategy support</li>
+        <li>Art direction</li>
+        <li>Design exploration</li>
+      </ul>
+    </section>
+
+    <section class="newsletter section-shell">
+      <div class="newsletter__inner">
+        <p class="eyebrow accent">NEWSLETTER</p>
+        <h2>Subscribe for notes, ideas, and behind-the-scenes design thinking.</h2>
+        <NewsletterForm />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

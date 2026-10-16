@@ -1,0 +1,52 @@
+<form class="newsletter-form" novalidate>
+  <label class="sr-only" for="email">Email address</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    placeholder="Your email address."
+    aria-describedby="newsletter-status"
+    required
+  />
+  <button type="submit">JOIN THE NEWSLETTER.</button>
+  <p id="newsletter-status" class="form-status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.querySelector('.newsletter-form');
+  const input = document.querySelector('.newsletter-form input');
+  const status = document.querySelector('.form-status');
+
+  if (form && input && status) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = input.value.trim();
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!email) {
+        status.textContent = 'Please enter your email address.';
+        status.classList.add('is-error');
+        status.classList.remove('is-success');
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        return;
+      }
+
+      if (!isValid) {
+        status.textContent = 'Please enter a valid email address.';
+        status.classList.add('is-error');
+        status.classList.remove('is-success');
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        return;
+      }
+
+      status.textContent = 'Newsletter signup is not connected yet. This form is a placeholder for a future integration.';
+      status.classList.remove('is-error');
+      status.classList.add('is-success');
+      input.setAttribute('aria-invalid', 'false');
+      input.value = '';
+    });
+  }
+</script>
